@@ -1,0 +1,12 @@
+.box{
+    height: 300px;
+    background: #2aabd2;
+}
+.box h2{
+    font-size: 18px;
+}
+
+.box2{
+    height: 300px;
+    background: #2b542c;
+}

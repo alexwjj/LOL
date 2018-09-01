@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄联盟盗版钓鱼网站-众人游戏</title>
+</head>
+<script src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/index.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<script src="js/lunhuanban.js"></script>
+<script src="js/tabbox.js"></script>
+<script src="js/li_jianbian.js"></script>
+<script>
+    function warn(){
+        alert("更多内容请点击视频下方文字。");
+    }
+</script>
+<body>
+<input type="hidden" id="appmakerValidate" name="798595965"/>
+<div id="header">
+    <div id="nav">
+        <ul>
+            <li  style="background:#00ab88"><a href="index.html">首页</a></li>
+            <li><a href="index_pic_html/index_pic.html">英雄资料</a></li>
+            <li ><a href="../5anniversary/5anniversary.html">周年盛典</a></li>
+            <li><a href="lol_hero/lol_hero.html">周年历史</a></li>
+            <li><a href="pic_video_html/pic_video.html">英雄信仰</a></li>
+            <li><a href="responsive/myheart.html">个人中心</a></li>
+            <li><a href="LOL_download/LOL_download.html">更多</a></li>
+        </ul>
+    </div>
+</div>
+<!--header over-->
+<div class="video_logo divcenter">
+    <h1 class="logo"><a class="tnd" href="#">英雄联盟官网：英雄，一起去超越</a></h1>
+    <video class="top-big-video" id="topBigVideo" autoplay="" loop="">
+        <source src="video/lol_hanbin.mp4" type="video/mp4">
+    </video>
+    <div class="top-act">
+        <h2 class="top-act-name">2016源计划：众人</h2>
+        <p class="top-act-desc">张宏、崔仲远、卢欣欣三大导师整装待发。2016众人教育，这个夏天卷土重来！</p>
+        <div class="top-act-video">
+            <video class="top-small-video" id="topSmallVideo" autoplay="" loop="">
+                <source src="video/lol_pifu.webm" type="video/webm">
+                <source src="video/lol_hanbin.mp4" type="video/mp4">
+            </video>
+            <a id="J_play" class="btn-top-play" href="javascript:void(0)"></a>
+        </div>
+        <a class="top-act-link" href="http://wujunjie.xin"  target="_blank">查看详情</a>
+    </div>
+    <div class="top-version">
+        众人教育：<em>周口师范学院</em>
+        <a class="top-version-link" href="#" onclick="warn()">15网工丶吴俊杰</a>
+    </div>
+    <div class="top-quick">
+        <a class="top-quick-link top-quick-download" href="LOL_download/LOL_download.html" ><strong class="hidden">下载游戏</strong></a>
+        <div id="tiaoshi">
+        <a class="top-quick-link top-quick-package"  href="index_pic_html/index_pic.html" ><span class="icon-quick-package"></span><span class="name">英雄资料</span><span class="desc">卡片式展示英雄</span></a>
+        <a class="top-quick-link top-quick-video"    href="5anniversary/5anniversary.html"  ><span class="icon-quick-video"></span><span class="name">周年盛典</span><span class="desc">5周年狂欢盛典</span></a>
+        <a class="top-quick-link top-quick-match"    href="lol_hero/lol_hero.html" ><span class="icon-quick-match"></span><span class="name">周年历史</span><span class="desc">近来3周年历史</span></a>
+        <a class="top-quick-link top-quick-info"     href="pic_video_html/pic_video.html" ><span class="icon-quick-info"></span><span class="name">英雄信仰</span><span class="desc">大气图片轮换</span></a>
+        <a class="top-quick-link top-quick-personal" href="responsive/myheart.html" ><span class="icon-quick-personal"></span><span class="name">个人中心</span><span class="desc">完美响应式网页</span></a>
+            <div class="login">
+                <div class="login_pic"><img src="images/login_wangzhe5.jpg"/></div>
+                <div class="login_character">
+                    ID:自己人丶快停火！<br>
+                    服务器：艾欧尼亚 <br>
+                    段位：最强亡者5 <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--video over-->
+<div id="lunhuanban">
+<div id="container"> </div>
+    <script src='js/delaunay.js'></script>
+    <script src='js/TweenMax.js'></script>
+    <script>
+    const TWO_PI_A = Math.PI * 2;
+
+    var images = [],
+            imageIndex = 0;
+
+    var image,
+            imageWidth = 780,
+            imageHeight = 330;
+
+    var vertices = [],
+            indices = [],
+            prevfrag = [],
+            fragments = [];
+
+    var margin = 50;
+
+    var container = document.getElementById('container');
+
+    var clickPosition = [imageWidth * 0.5, imageHeight * 0.5];
+
+    window.onload = function() {
+        TweenMax.set(container, {perspective:500});
+
+        // images from http://www.hdwallpapers.in
+        var urls = [
+                    'images/1.jpg',
+                    'images/2.jpg',
+                    'images/3.jpg',
+                    'images/4.jpg'
+                ],
+                image,
+                loaded = 0;
+        // very quick and dirty hack to load and display the first image asap
+        images[0] = image = new Image();
+        image.onload = function() {
+            if (++loaded === 1) {
+
+                for (var i = 1; i < 4; i++) {
+                    images[i] = image = new Image();
+
+                    image.src = urls[i];
+                }
+                placeImage();
+            }
+        };
+        image.src = urls[0];
+    };
+
+    function placeImage(transitionIn) {
+        image = images[imageIndex];
+
+        if (++imageIndex === images.length) imageIndex = 0;
+
+        var num = Math.random();
+        if(num < .25) {
+            image.direction = "left";
+        } else if(num < .5) {
+            image.direction = "top";
+        } else if(num < .75) {
+            image.direction = "bottom";
+        } else {
+            image.direction = "right";
+        }
+
+        container.appendChild(image);
+        image.style.opacity = 0;
+
+        if (transitionIn !== false) {
+            triangulateIn();
+        }
+    }
+
+    function triangulateIn(event) {
+        var box = image.getBoundingClientRect(),
+                top = box.top,
+                left = box.left;
+
+        if(image.direction == "left") {
+            clickPosition[0] = 0;
+            clickPosition[1] = imageHeight / 2;
+        } else if(image.direction == "top") {
+            clickPosition[0] = imageWidth / 2;
+            clickPosition[1] = 0;
+        } else if(image.direction == "bottom") {
+            clickPosition[0] = imageWidth / 2;
+            clickPosition[1] = imageHeight;
+        } else if(image.direction == "right") {
+            clickPosition[0] = imageWidth;
+            clickPosition[1] = imageHeight / 2;
+        }
+
+
+        triangulate();
+        build();
+    }
+
+    function triangulate() {
+        for(var i = 0; i < 40; i++) {
+            x = -margin + Math.random() * (imageWidth + margin * 2);
+            y = -margin + Math.random() * (imageHeight + margin * 2);
+            vertices.push([x, y]);
+        }
+        vertices.push([0,0]);
+        vertices.push([imageWidth,0]);
+        vertices.push([imageWidth, imageHeight]);
+        vertices.push([0, imageHeight]);
+
+        vertices.forEach(function(v) {
+            v[0] = clamp(v[0], 0, imageWidth);
+            v[1] = clamp(v[1], 0, imageHeight);
+        });
+
+        indices = Delaunay.triangulate(vertices);
+    }
+
+    function build() {
+        var p0, p1, p2,
+                fragment;
+
+        var tl0 = new TimelineMax({onComplete:buildCompleteHandler});
+
+        for (var i = 0; i < indices.length; i += 3) {
+            p0 = vertices[indices[i + 0]];
+            p1 = vertices[indices[i + 1]];
+            p2 = vertices[indices[i + 2]];
+
+            fragment = new Fragment(p0, p1, p2);
+
+            var dx = fragment.centroid[0] - clickPosition[0],
+                    dy = fragment.centroid[1] - clickPosition[1],
+                    d = Math.sqrt(dx * dx + dy * dy),
+                    rx = 30 * sign(dy),
+                    ry = 90 * -sign(dx),
+                    delay = d * 0.003 * randomRange(0.9, 1.1);
+            fragment.canvas.style.zIndex = Math.floor(d).toString();
+
+            var tl1 = new TimelineMax();
+
+            if(image.direction == "left") {
+                rx = Math.abs(rx);
+                ry = 0;
+            } else if(image.direction == "top") {
+                rx = 0;
+                ry = Math.abs(ry);
+            } else if(image.direction == "bottom") {
+                rx = 0;
+                ry = - Math.abs(ry);
+            } else if(image.direction == "right") {
+                rx = - Math.abs(rx);
+                ry = 0;
+            }
+
+            tl1.from(fragment.canvas, 1, {
+                z:-50,
+                rotationX:rx,
+                rotationY:ry,
+                scaleX:0,
+                scaleY:0,
+                ease:Cubic.easeIn
+            });
+            tl1.from(fragment.canvas, 0.4,{alpha:0}, 0.6);
+
+            tl0.insert(tl1, delay);
+
+            fragments.push(fragment);
+            container.appendChild(fragment.canvas);
+        }
+    }
+
+    function buildCompleteHandler() {
+        // add pooling?
+        image.style.opacity = 1;
+        image.addEventListener('transitionend', function catchTrans() {
+            fragments.forEach(function(f) {
+                container.removeChild(f.canvas);
+            });
+
+            fragments.length = 0;
+            vertices.length = 0;
+            indices.length = 0;
+
+            placeImage();
+            this.removeEventListener('transitionend',catchTrans,false);
+        }, false);
+
+    }
+
+    //////////////
+    // MATH UTILS
+    //////////////
+
+    function randomRange(min, max) {
+        return min + (max - min) * Math.random();
+    }
+
+    function clamp(x, min, max) {
+        return x < min ? min : (x > max ? max : x);
+    }
+
+    function sign(x) {
+        return x < 0 ? -1 : 1;
+    }
+
+    //////////////
+    // FRAGMENT
+    //////////////
+
+    Fragment = function(v0, v1, v2) {
+        this.v0 = v0;
+        this.v1 = v1;
+        this.v2 = v2;
+
+        this.computeBoundingBox();
+        this.computeCentroid();
+        this.createCanvas();
+        this.clip();
+    };
+    Fragment.prototype = {
+        computeBoundingBox:function() {
+            var xMin = Math.min(this.v0[0], this.v1[0], this.v2[0]),
+                    xMax = Math.max(this.v0[0], this.v1[0], this.v2[0]),
+                    yMin = Math.min(this.v0[1], this.v1[1], this.v2[1]),
+                    yMax = Math.max(this.v0[1], this.v1[1], this.v2[1]);
+
+            this.box = {
+                x:Math.round(xMin),
+                y:Math.round(yMin),
+                w:Math.round(xMax - xMin),
+                h:Math.round(yMax - yMin)
+            };
+
+        },
+        computeCentroid:function() {
+            var x = (this.v0[0] + this.v1[0] + this.v2[0]) / 3,
+                    y = (this.v0[1] + this.v1[1] + this.v2[1]) / 3;
+
+            this.centroid = [x, y];
+        },
+        createCanvas:function() {
+            this.canvas = document.createElement('canvas');
+            this.canvas.width = this.box.w;
+            this.canvas.height = this.box.h;
+            this.canvas.style.width = this.box.w + 'px';
+            this.canvas.style.height = this.box.h + 'px';
+            this.canvas.style.left = this.box.x + 'px';
+            this.canvas.style.top = this.box.y + 'px';
+            this.ctx = this.canvas.getContext('2d');
+        },
+        clip:function() {
+            this.ctx.save();
+            this.ctx.translate(-this.box.x, -this.box.y);
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.v0[0], this.v0[1]);
+            this.ctx.lineTo(this.v1[0], this.v1[1]);
+            this.ctx.lineTo(this.v2[0], this.v2[1]);
+            this.ctx.closePath();
+            this.ctx.clip();
+            this.ctx.drawImage(image, 0, 0);
+            this.ctx.restore();
+        }
+    };//@ sourceURL=pen.js
+</script>
+<!--lunhuanban_pic over-->
+    <div class="tabbox">
+            <div class="tab">
+                <a href="javascript:;" class="on">综合</a>
+                <a href="javascript:;">公告</a>
+                <a href="javascript:;">赛事</a>
+                <a href="javascript:;">论坛</a>
+            </div>
+            <div class="content_box">
+                <ul>
+                    <li>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                    </li>
+                    <li>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                    </li>
+                    <li>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                    </li>
+                    <li>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                        <p>2016年英雄联盟5周年狂欢盛典<span class="new-type">新闻</span><span class="date">08/11</span></p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+<!--lunhuanban_wenzhi over-->
+</div>
+<!--lunhuanban over-->
+<div id="content">
+    <div class="content_pic">
+        <ul>
+        <li><a href="#"><img src="images/yjh-001.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-002.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-003.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-004.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-005.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-006.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-007.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/yjh-008.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="content_character">
+        <ul>
+            <li class="li1"><a href="#">1.源计划 联合</a></li>
+            <li class="li2"><a href="#">2.源计划 自由</a></li>
+            <li class="li3"><a href="#">3.源计划 野望</a></li>
+            <li class="li4"><a href="#">4.源计划 风</a></li>
+            <li class="li5"><a href="#">5.源计划 山</a></li>
+            <li class="li6"><a href="#">6.源计划 林</a></li>
+            <li class="li7"><a href="#">7.源计划 火</a></li>
+            <li class="li8"><a href="#">8.源计划 雷</a></li>
+        </ul>
+    </div>
+</div>
+<!--content over-->
+<div id="footer">
+    <div class="footer_pic"><img src="images/footlogo.png" alt="英雄联盟"></div>
+    <div class="footer_character">
+        <ul>
+        <li><a href="#">腾讯互动娱乐|服务条款|广告服务|腾讯游戏招聘|腾讯游戏客服|游戏活动|游戏地图|商务合作|腾讯网|网站导航</a></li>
+        <li><a href="http://wujunjie.xin">俊劫-www.wujunjie.xin
+          </a></li>
+        <li><a href="#">© 2018 Reserved | Design by 吴俊杰 豫ICP备18016362号</a></li>
+       
+        </ul>
+    </div>
+</div>
+<!--footer over-->
+<div class="sidebar">
+    <ul>
+        <li class="weixin">
+            <div class="weixin-logo"></div>
+        </li>
+        <li class="idea"></li>
+        <li class="app">
+            <div class="app-logo"></div>
+        </li>
+    </ul>
+</div>
+
+
+</body>
+</html>

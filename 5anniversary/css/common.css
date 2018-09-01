@@ -1,0 +1,118 @@
+@charset "gbk";
+
+/* ====================================================================================================
+ * Page name : lol 5th Styles 英雄联盟五周年预热站样式
+ * Author : Smallni
+ * Date : 2016-07-30
+ * update :
+ * ==================================================================================================== */
+
+
+/* ====================================================================================================
+* Public Styles (全站级公共样式)
+* ==================================================================================================== */
+
+/* Reset */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td,em,button{ margin:0; padding:0;}
+table{ border-collapse:collapse;border-spacing:0;}
+img{ border:0;}
+em,b{ font-style:normal; font-weight:normal;}
+ul{ list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+
+
+/* layout */
+.layout{ width:1000px; margin:0 auto;}
+
+/* link */
+a { color:#666; text-decoration:none; }
+a:hover { text-decoration:none; }
+
+/* Clearfix */
+.clearfix:after,.layout:after,.clearfixlist li:after{ content:"\0020"; display:block; clear:both; height:0; font-size:0;}
+.clearfix,.layout,.clearfixlist{ zoom:1;}
+.hid{ display:none;}
+.tid{ text-indent:-9999em; overflow:hidden; *zoom:1;}
+
+/* main skin */
+html{ background: #000;}
+body{ font-family: tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif; min-width: 1100px; overflow-x: hidden; background: url(../images/bg.jpg) no-repeat center 42px; }
+
+.btn-date,.nav .nav-link,.history-bg-line,.icon-history,.btn-video{ background-image:url(../images/spr.png); background-repeat:no-repeat; background-position:-9999em -9999em;}
+
+/* ====================================================================================================
+ * Header And Footer Styles (头部和尾部样式)
+ * ==================================================================================================== */
+
+.chromeframe{ position: absolute; width: 100%; background: #000; height: 30px; line-height: 30px; color: #fff; text-align: center; z-index: 3; font-size: 14px;}
+
+.header{ position: relative; width: 1100px; height: 740px; margin: 0 auto; z-index: 2}
+.logo{ position: absolute; left: 33px; top: 40px; width:203px; height: 106px; overflow: hidden; background: url(../images/logo.png) no-repeat 0 0; text-indent: -999em; }
+.btn-date{ position: absolute; right: 0; top: 40px; width: 179px; height: 70px; background-position: -1370px 0; text-indent: -999em; overflow: hidden; outline: medium none }
+
+/* footer */
+#footer_ied { padding:30px 0; text-align:center; font:normal 12px/19px Tahoma; z-index:1; margin: 0 10px; }
+.wrap_ied{ overflow: hidden; zoom: 1}
+#footer_ied .e { font:normal 10px/19px Tahoma;}
+#footer_ied, #footer_ied a { color:#3a3a3a; text-decoration:none;}
+
+
+/* content */
+.content{ position: relative; z-index: 2; width: 1100px; height: 480px; margin: 0 auto}
+.btn-video{ position: absolute; left: 450px; top: 0;  width: 205px; height: 120px; background-position: -1371px -93px; z-index: 2; text-indent: -999em; overflow: hidden; outline: medium none}
+.nav{ position: relative; z-index: 1 }
+.nav li{ position: absolute; width: 213px;}
+.nav .nav1{ left: 0; top: 0}
+.nav .nav2{ left: 220px; top: 80px;  }
+.nav .nav3{left: 446px; top: 160px;}
+.nav .nav4{ left: 664px; top: 80px;}
+.nav .nav5{ right: 0; top: 0;}
+.nav .nav-link{ position: absolute; left: 0; top: 0; width: 213px; height: 213px; z-index: 2; text-indent: -999em; overflow: hidden}
+.nav .nav1 .nav-link{ background-position: -213px 0}
+.nav .nav2 .nav-link{ background-position: -639px 0}
+.nav .nav3 .nav-link{ background-position: -426px 0 }
+.nav .nav4 .nav-link{ background-position: -852px 0 }
+.nav .nav5 .nav-link{ background-position: -1065px 0 }
+.nav .nav-drop{ position: absolute; display:none; left: 1px; top: 105px; padding: 122px 25px 0 25px; width: 160px; height: 268px; z-index: 1; background: url(../images/bg-drop.png) no-repeat 0 0;
+}
+.nav .nav-drop .pic-drop{ display: block; margin-bottom: 10px; border: 1px solid #bf9e5c }
+.nav .nav-drop p{ font-size: 14px; color: #c0a455; line-height: 1.75; margin-right: -10px }
+
+/* history */
+.history{ margin-bottom: 100px; }
+.history-top{ width: 1100px;margin: 0 auto;}
+.history-content{ display: none; height: 150px;  overflow: hidden; zoom: 1 }
+.history-top img{ float: left; width: 140px; height: 150px; margin-left:162px; margin-right: 30px; }
+.history-top p{ float: left; padding-top: 30px; width: 610px; font-size: 14px; color: #b9a364; line-height: 1.75}
+.history-bottom{ position: relative; height: 120px; }
+.history-bg-line{ display: block; position: absolute; left: 0; top: 46px; width: 100%; height: 4px; background-position: 0 -428px; overflow: hidden  }
+.history-nav{ position: relative; width: 1000px; margin: 0 auto }
+.history-nav li{ float: left; width: 60px; margin-right: 175px; text-align: center; color: #48321f; font-size: 14px;}
+.icon-history{ display: block; width: 60px; height: 80px; background-position: -1098px -278px; cursor: pointer}
+.history-nav .last{ margin-right: 0}
+.history-nav .cur .icon-history{ background-position: -872px -278px; }
+.history-nav .cur { color:#b9a364; font-weight: bold }
+
+/* pop */
+.pop{ position:relative; left:50%; top:50%;  z-index:9999; outline: medium none; }
+.pop-close{  position: absolute; top: 0; right: -60px; width: 50px; height: 50px; cursor: pointer; z-index: 8040; color: #d4b661; font-size: 80px; line-height: 50px; text-align: center;}
+.pop-video{ width: 900px; height: 600px; border: 2px solid #d4b661; margin-left: -450px; margin-top: -300px;}
+.pop-video-content{ width: 900px; height: 600px;}
+#J_video video{width: 900px;height: 600px;}
+
+.pop-date{ width: 524px ; height: 450px; padding: 100px 38px; background: url(../images/bg-pop.jpg) no-repeat 0 0;}
+.pop-date-nav{ height: 46px; margin-bottom: 20px; overflow: hidden; zoom: 1;}
+.pop-date-nav li{ float: left; width: 33.33333333%; height: 46px; line-height: 46px; background: #141911; text-align: center; font-size: 16px; color: #495a3d; cursor: pointer}
+.pop-date-nav .cur{ background: #293620; color: #d4b661; font-weight: bold}
+.pop-date-content{ display: none}
+.pop-date-content p{ height: 40px; line-height: 40px; border-bottom: 1px solid #0f130d; border-top: 1px solid #20271b; color: #d7e1a9; font-size: 14px;}
+.pop-date-content .first{ border-top: 0 none}
+.pop-date-content .l{ display: inline-block; vertical-align: middle; width: 100px; padding-left: 50px; margin-right: 80px;}
+.pop-date-content .r{ display: inline-block; vertical-align: middle;}
+.pop-date-content .last{ border-bottom: 0 none}
+
+.nb-video{ position: absolute; left: 50%; top: 42px; z-index: 1; width: 1920px; height: 900px; margin-left: -960px;}
+.bg-flash-pic{ position: absolute; left: 50%; top: 42px; z-index: 2; width: 1920px; height: 900px; margin-left: -960px; background: url(../images/bg-flash-pic.png) no-repeat 0 0 }
+.top-time{ position: absolute; left:50%; width:1100px; height:45px; line-height:45px; margin-left:-550px; top: 730px; z-index: 4;  color:#d9c169; font-size:20px; text-align:center }
+.top-time em{ font-weight:bold;}
+
